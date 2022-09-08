@@ -1,0 +1,16 @@
+{
+  "name": "@sorarain/use",
+  "version": "1.1.0",
+  "description": "",
+  "keywords": [],
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "adicw",
+  "license": "MIT",
+  "scripts": {
+    "build": "vite build"
+  }
+}
