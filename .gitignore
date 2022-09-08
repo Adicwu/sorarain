@@ -4,3 +4,5 @@ node_modules
 **/dist
 coverage
 *.log
+site/docs/.vuepress/.cache
+site/docs/.vuepress/.temp
