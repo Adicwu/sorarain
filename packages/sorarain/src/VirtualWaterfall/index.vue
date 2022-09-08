@@ -35,9 +35,9 @@ const emit = defineEmits<{
 const props = withDefaults(
   defineProps<{
     /** 滚动节点 */
-    target: string | HTMLElement
+    target?: string | HTMLElement
     /** 新数据请求 */
-    requset: Type.Requset
+    requset?: Type.Requset
     /** 滚底阈值差 */
     offsetY?: number
     /** 列的总数 */
