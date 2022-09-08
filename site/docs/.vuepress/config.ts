@@ -8,9 +8,9 @@ const __dirname = getDirname(import.meta.url)
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  // head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
+  head: [['link', { rel: 'icon', href: '/images/favicon.png' }]],
   theme: defaultTheme({
-    logo: '/images/favicon.ico',
+    logo: '/images/favicon.png',
     repo: 'https://github.com/Adicwu/sorarain-cli/tree/master/packages/sorarain',
     docsRepo: 'https://github.com/Adicwu/sorarain-cli/tree/master/site',
     docsBranch: 'master',

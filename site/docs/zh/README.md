@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: /images/favicon.ico
+heroImage: /images/favicon.png
 actions:
   - text: 快速开始
     link: /zh/guide/base-start
