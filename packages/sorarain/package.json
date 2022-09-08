@@ -1,6 +1,6 @@
 {
   "name": "sorarain",
-  "version": "0.4.2",
+  "version": "0.5.3",
   "main": "dist/lib/index.js",
   "module": "dist/es/index.js",
   "files": [
@@ -12,7 +12,7 @@
   },
   "author": "",
   "license": "MIT",
-  "typings": "lib/index.d.ts",
+  "typings": "dist/lib/index.d.ts",
   "dependencies": {
     "@sorarain/use": "workspace:^1.1.0",
     "@sorarain/utils": "workspace:^1.0.7"
