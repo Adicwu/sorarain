@@ -1,48 +1,31 @@
 import { defineUserConfig } from 'vuepress'
 import { getDirname, path } from '@vuepress/utils'
 import { defaultTheme } from '@vuepress/theme-default'
+import sidebar from '../../src/sidebar'
+import { searchPlugin } from '@vuepress/plugin-search'
 
 const __dirname = getDirname(import.meta.url)
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: 'Sorarain',
-  description: '这是我的第一个 VuePress 站点',
   // head: [['link', { rel: 'icon', href: '/images/logo.png' }]],
   theme: defaultTheme({
     logo: '/images/favicon.ico',
     repo: 'https://github.com/Adicwu/sorarain-cli/tree/master/packages/sorarain',
-    docsRepo: '',
+    docsRepo: 'https://github.com/Adicwu/sorarain-cli/tree/master/site',
+    docsBranch: 'master',
+    notFound: ['李在淦神魔？'],
     navbar: [
       {
-        text: '指南',
-        link: '/foo/'
+        text: '设计',
+        link: '/zh/guide/base-design'
       },
       {
         text: '组件',
-        link: '/foo/'
-        // children: ['/group/foo.md', '/group/bar.md'],
+        link: '/zh/component/keep-alives'
       }
     ],
-    sidebar: [
-      // SidebarItem
-      {
-        text: 'Foo',
-        link: '/foo/',
-        children: [
-          // SidebarItem
-          {
-            text: 'github',
-            link: 'https://github.com',
-            children: []
-          },
-          // 字符串 - 页面文件路径
-          '/foo/bar.md'
-        ]
-      },
-      // 字符串 - 页面文件路径
-      '/bar/README.md'
-    ]
+    sidebar
   }),
   locales: {
     // 键名是该语言所属的子路径
@@ -54,14 +37,26 @@ export default defineUserConfig({
     // },
     '/zh/': {
       lang: 'zh-CN',
-      title: 'VuePress',
-      description: 'Vue 驱动的静态网站生成器'
+      title: 'Sorarain',
+      description: '基于Vue3的普普通通组件库'
     }
   },
-  markdown: {
-    importCode: {
-      handleImportPath: (str) =>
-        str.replace(/^@src/, path.resolve(__dirname, 'path/to/src'))
-    }
-  }
+  // markdown: {
+  //   importCode: {
+  //     handleImportPath: (str) =>
+  //       str.replace(/^@src/, path.resolve(__dirname, 'path/to/src'))
+  //   }
+  // },
+  plugins: [
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+        '/zh/': {
+          placeholder: '搜索',
+        },
+      },
+    })
+  ]
 })
