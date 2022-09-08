@@ -80,8 +80,12 @@ importers:
 
   site:
     specifiers:
+      '@vuepress/plugin-git': 2.0.0-beta.51
+      '@vuepress/plugin-search': 2.0.0-beta.51
       vuepress: 2.0.0-beta.51
     devDependencies:
+      '@vuepress/plugin-git': 2.0.0-beta.51
+      '@vuepress/plugin-search': 2.0.0-beta.51
       vuepress: 2.0.0-beta.51
 
 packages:
@@ -878,6 +882,20 @@ packages:
     dependencies:
       '@vuepress/core': 2.0.0-beta.51
       prismjs: 1.29.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@vuepress/plugin-search/2.0.0-beta.51:
+    resolution: {integrity: sha512-LUKD1WOhesfbjRmy+3wPz27ZOat5sEL7nRVFrmoZNGjqGoUSuh/AFnd04z2utVEoceeuWWOluVmpoYKhxJVMFQ==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.51
+      '@vuepress/core': 2.0.0-beta.51
+      '@vuepress/shared': 2.0.0-beta.51
+      '@vuepress/utils': 2.0.0-beta.51
+      chokidar: 3.5.3
+      vue: 3.2.37
+      vue-router: 4.1.5_vue@3.2.37
     transitivePeerDependencies:
       - supports-color
     dev: true
