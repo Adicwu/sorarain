@@ -58,8 +58,10 @@ importers:
 
   examples:
     specifiers:
-      sorarain: workspace:^0.4.8
+      '@sorarain/utils': workspace:^1.0.7
+      sorarain: workspace:^0.5.2
     dependencies:
+      '@sorarain/utils': link:../packages/utils
       sorarain: link:../packages/sorarain
 
   packages/sorarain:
