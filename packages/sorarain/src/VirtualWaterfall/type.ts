@@ -1,6 +1,6 @@
 import { CSSProperties } from 'vue'
 
-export type Requset = (
+export type Request = (
   /** 第几页 */
   tpage: number,
   /** 每页大小 */

@@ -37,7 +37,7 @@ const props = withDefaults(
     /** 滚动节点 */
     target?: string | HTMLElement
     /** 新数据请求 */
-    requset?: Type.Requset
+    request?: Type.Request
     /** 滚底阈值差 */
     offsetY?: number
     /** 列的总数 */
@@ -49,7 +49,7 @@ const props = withDefaults(
   }>(),
   {
     target: '',
-    requset: () =>
+    request: () =>
       Promise.resolve({
         total: 0,
         list: []
@@ -202,7 +202,7 @@ const { onIsBindChanged, getTarget } = (() => {
 const loadMoreData = async () => {
   if (reList.isPending) return
   reList.isPending = true
-  const { list, total } = await props.requset(reList.tpage, requestSize.value)
+  const { list, total } = await props.request(reList.tpage, requestSize.value)
   const hasResult = list.length !== 0
   if (!hasResult || list.length < requestSize.value) {
     reList.hasMore = false
