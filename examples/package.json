@@ -11,6 +11,6 @@
   "license": "MIT",
   "dependencies": {
     "@sorarain/utils": "workspace:^1.0.7",
-    "sorarain": "workspace:^0.5.2"
+    "sorarain": "workspace:^0.5.3"
   }
 }

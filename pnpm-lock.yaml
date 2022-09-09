@@ -59,14 +59,14 @@ importers:
   examples:
     specifiers:
       '@sorarain/utils': workspace:^1.0.7
-      sorarain: workspace:^0.5.2
+      sorarain: workspace:^0.5.3
     dependencies:
       '@sorarain/utils': link:../packages/utils
       sorarain: link:../packages/sorarain
 
   packages/sorarain:
     specifiers:
-      '@sorarain/use': workspace:^1.1.0
+      '@sorarain/use': workspace:^1.1.5
       '@sorarain/utils': workspace:^1.0.7
     dependencies:
       '@sorarain/use': link:../use
@@ -83,11 +83,18 @@ importers:
 
   site:
     specifiers:
+      '@sorarain/utils': workspace:^1.0.7
       '@vuepress/plugin-git': 2.0.0-beta.51
+      '@vuepress/plugin-register-components': 2.0.0-beta.51
       '@vuepress/plugin-search': 2.0.0-beta.51
+      sorarain: workspace:^0.5.4
       vuepress: 2.0.0-beta.51
+    dependencies:
+      '@sorarain/utils': link:../packages/utils
+      sorarain: link:../packages/sorarain
     devDependencies:
       '@vuepress/plugin-git': 2.0.0-beta.51
+      '@vuepress/plugin-register-components': 2.0.0-beta.51
       '@vuepress/plugin-search': 2.0.0-beta.51
       vuepress: 2.0.0-beta.51
 
@@ -885,6 +892,16 @@ packages:
     dependencies:
       '@vuepress/core': 2.0.0-beta.51
       prismjs: 1.29.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@vuepress/plugin-register-components/2.0.0-beta.51:
+    resolution: {integrity: sha512-9zZgv37gdQlDwpZnif/CChJvKJVeHQ2LSbkw0ab6L5GIjrTegDBc3AHXjoNJBIG80Xo+/fAdR1dWjAlR7YfgKg==}
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.51
+      '@vuepress/utils': 2.0.0-beta.51
+      chokidar: 3.5.3
     transitivePeerDependencies:
       - supports-color
     dev: true
