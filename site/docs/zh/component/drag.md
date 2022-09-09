@@ -45,7 +45,7 @@ import { AwDrag } from 'sorarain';
   </template>
 </CodeShow>
 
-### 配合ListVueTransition组件实现拖拽过渡并换位
+### 配合ListModifyTransition组件实现拖拽过渡并换位
 
 <CodeShow>
   <template #source>

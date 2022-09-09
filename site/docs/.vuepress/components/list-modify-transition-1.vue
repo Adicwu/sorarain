@@ -4,14 +4,14 @@
     <button @click="list.shift()">shift</button>
     <button @click="list.pop()">pop</button>
 
-    <AwListVueTransition class="box">
+    <AwListModifyTransition class="box">
       <div v-for="item in list" :key="item" class="box-item">{{ item }}</div>
-    </AwListVueTransition>
+    </AwListModifyTransition>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { AwListVueTransition } from 'sorarain'
+import { AwListModifyTransition } from 'sorarain'
 import { ref } from 'vue'
 const list = ref([0, 1, 2, 3])
 </script>

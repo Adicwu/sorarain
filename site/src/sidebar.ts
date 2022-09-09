@@ -1,7 +1,7 @@
 export default {
   '/zh/guide': [
     {
-      text: "基础",
+      text: '基础',
       children: [
         {
           text: '设计',
@@ -14,11 +14,11 @@ export default {
         {
           text: '快速开始',
           link: '/zh/guide/base-start'
-        },
+        }
       ]
     },
     {
-      text: "进阶",
+      text: '进阶',
       children: [
         {
           text: '内置过渡动画',
@@ -27,7 +27,7 @@ export default {
         {
           text: '更新日志',
           link: '/zh/guide/advanced-changelog'
-        },
+        }
       ]
     }
   ],
@@ -40,9 +40,9 @@ export default {
           link: '/zh/component/keep-alives'
         },
         {
-          text: 'ListVueTransition 列表CURD过渡',
-          link: '/zh/component/list-vue-transition'
-        },
+          text: 'ListModifyTransition 列表CURD过渡',
+          link: '/zh/component/list-modify-transition'
+        }
       ]
     },
     {
@@ -62,6 +62,6 @@ export default {
           link: '/zh/component/drag'
         }
       ]
-    },
+    }
   ]
-} 
+}

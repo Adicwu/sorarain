@@ -1,5 +1,5 @@
 <template>
-  <AwListVueTransition class="content">
+  <AwListModifyTransition class="content">
     <AwDrag
       v-for="item in list"
       :key="item.id"
@@ -10,12 +10,12 @@
     >
       <img :src="item.pic" alt="" />
     </AwDrag>
-  </AwListVueTransition>
+  </AwListModifyTransition>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { AwDrag, AwListVueTransition, AwDragExchangeParam } from 'sorarain'
+import { AwDrag, AwListModifyTransition, AwDragExchangeParam } from 'sorarain'
 import { arrChildSwap } from '@sorarain/utils'
 const list = ref([
   {

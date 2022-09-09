@@ -1,4 +1,4 @@
-# ListVueTransition 列表CURD过渡
+# ListModifyTransition 列表CURD过渡
 
 ### 介绍
 
@@ -9,7 +9,7 @@
 此组件引入即可使用
 
 ```typescript
-import { AwListVueTransition } from 'sorarain';
+import { AwListModifyTransition } from 'sorarain';
 ```
 
 
@@ -20,11 +20,11 @@ import { AwListVueTransition } from 'sorarain';
 
 <CodeShow>
   <template #source>
-    <list-vue-transition-1 />
+    <list-modify-transition-1 />
   </template>
   <template #meta>
 
-  @[code vue:no-line-numbers](../../.vuepress/components/list-vue-transition-1.vue)
+  @[code vue:no-line-numbers](../../.vuepress/components/list-modify-transition-1.vue)
 
   </template>
 </CodeShow>
