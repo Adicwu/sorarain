@@ -73,7 +73,10 @@ importers:
       '@sorarain/utils': link:../utils
 
   packages/use:
-    specifiers: {}
+    specifiers:
+      '@sorarain/utils': workspace:^1.0.7
+    dependencies:
+      '@sorarain/utils': link:../utils
 
   packages/utils:
     specifiers: {}

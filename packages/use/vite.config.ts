@@ -7,7 +7,7 @@ export default defineConfig({
     outDir: 'es',
     minify: true,
     rollupOptions: {
-      external: ['vue'],
+      external: ['vue', '@sorarain/utils'],
       input: ['src/index.ts'],
       output: [
         {
