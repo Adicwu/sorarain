@@ -1,7 +1,10 @@
 import { defineClientConfig } from '@vuepress/client'
 
 export default defineClientConfig({
-  enhance({ app, router, siteData }) {},
-  setup() {},
-  rootComponents: [],
+  async enhance({ app, router, siteData }) {
+    // if (!__VUEPRESS_SSR__) {
+    //   const sorarain = await import('sorarain')
+    //   app.use(sorarain.default)
+    // }
+  }
 })

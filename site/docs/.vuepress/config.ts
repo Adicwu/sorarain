@@ -3,6 +3,7 @@ import { getDirname, path } from '@vuepress/utils'
 import { defaultTheme } from '@vuepress/theme-default'
 import sidebar from '../../src/sidebar'
 import { searchPlugin } from '@vuepress/plugin-search'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
 
 const __dirname = getDirname(import.meta.url)
 
@@ -38,7 +39,7 @@ export default defineUserConfig({
     '/zh/': {
       lang: 'zh-CN',
       title: 'Sorarain',
-      description: '基于Vue3的普普通通组件库'
+      description: '基于Vue3的功能性组件库'
     }
   },
   // markdown: {
@@ -57,6 +58,13 @@ export default defineUserConfig({
           placeholder: '搜索',
         },
       },
+    }),
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, './components'),
+      componentsPatterns: [
+        '**/*.vue',
+      ]
     })
-  ]
+  ],
+  port: 2444
 })
