@@ -45,7 +45,7 @@ export default defineComponent({
   setup(props, ctx) {
     const selfEl = ref<HTMLElement>()
 
-    const selfElRect = useElementRect(selfEl)
+    const { rect: selfElRect } = useElementRect(selfEl)
     const state = reactive({
       draging: false,
       dragEntering: false,
@@ -107,10 +107,9 @@ export default defineComponent({
     }
     // drag事件有毫秒级的节流，故建议在dragstart中在执行一次
     const ondrag = (e: DragEvent) => {
-      // console.log(e.clientX, e.offsetX, e.pageX)
-      // todo firefox兼容问题，其无pageX
-      move.x = e.pageX
-      move.y = e.pageY
+      // todo firefox兼容问题
+      move.x = e.clientX
+      move.y = e.clientY
     }
     const ondragend = () => {
       state.draging = false

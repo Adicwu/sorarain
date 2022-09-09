@@ -49,11 +49,10 @@ const props = withDefaults(
   }>(),
   {
     target: '',
-    request: () =>
-      Promise.resolve({
-        total: 0,
-        list: []
-      }),
+    request: async () => ({
+      total: 0,
+      list: []
+    }),
     offsetY: 300,
     column: 3,
     columnItemCount: 6,
@@ -221,7 +220,9 @@ const initRect = () => {
   if (!rect) return
   scroll.width = selfEl.value!.clientWidth
   scroll.height = rect.height
-  scroll.offsetTop = selfEl.value!.offsetTop
+  if (props.target) {
+    scroll.offsetTop = selfEl.value!.offsetTop
+  }
   scroll.start = (getTarget()?.scrollTop || 0) - scroll.offsetTop
 }
 /**
