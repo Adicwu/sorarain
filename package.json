@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:sorarain": "gulp -f packages/sorarain/script/build/gulpfile.ts"
+    "sorarain:build": "gulp -f packages/sorarain/script/build/gulpfile.ts",
+    "sorarain/utils:build": "pnpm run --filter ./packages/utils build",
+    "sorarain/use:build": "pnpm run --filter ./packages/use build",
+    "examples:dev": "pnpm run --filter ./examples dev",
+    "site:dev": "pnpm run --filter ./site docs:dev",
+    "site:build": "pnpm run --filter ./site docs:build"
   },
   "keywords": [],
   "author": "",
