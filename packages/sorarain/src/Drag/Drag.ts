@@ -11,17 +11,9 @@ import {
   ref,
   Teleport
 } from 'vue'
+import type * as Type from './type'
 
-type Key = string | number
-interface AwDragProps {
-  draggable: boolean
-  groupKey: Key
-  selfKey: Key
-}
-type DargTransferData = Omit<AwDragProps, 'draggable'>
-export type AwDragExchangeParam = Record<'from' | 'to', Key>
-
-export const AwDrag = defineComponent({
+export default defineComponent({
   name: 'AwDrag',
   props: {
     /**
@@ -48,7 +40,7 @@ export const AwDrag = defineComponent({
   },
   emits: {
     /** 交换事件 */
-    exChange: (e: AwDragExchangeParam) => e
+    exChange: (e: Type.AwDragExchangeParam) => e
   },
   setup(props, ctx) {
     const selfEl = ref<HTMLElement>()
@@ -92,7 +84,7 @@ export const AwDrag = defineComponent({
     })
 
     const getDargTransferData = (e: DragEvent) => {
-      return jsonParse<DargTransferData | null, null>(
+      return jsonParse<Type.DargTransferData | null, null>(
         e.dataTransfer?.getData('aw-drag'),
         null
       )
@@ -110,7 +102,7 @@ export const AwDrag = defineComponent({
         JSON.stringify({
           groupKey: props.groupKey,
           selfKey: props.selfKey
-        } as DargTransferData)
+        } as Type.DargTransferData)
       )
     }
     // drag事件有毫秒级的节流，故建议在dragstart中在执行一次
@@ -208,4 +200,4 @@ export const AwDrag = defineComponent({
         ]
       )
   }
-}) as DefineComponent<AwDragProps>
+}) as DefineComponent<Type.AwDragProps>
