@@ -2,9 +2,10 @@
 
 ### 介绍
 
-*注意，此组件目前只支持Chromium内核的浏览器（如chrome/edge等）*
-
 用于拖拽的**数据驱动型**组件
+::: danger
+注意，此组件目前只支持Chromium内核的浏览器（如chrome/edge等）
+:::
 
 ### 引入
 
@@ -20,93 +21,44 @@ import { AwDrag } from 'sorarain';
 
 ### 基础用法
 
-```vue
-<template>
-  <!-- 注意 此组件会生成一个div标签 -->
-  <AwDrag
-    group-key="xsx"
-    :self-key="1"      
-  >
-    <img src="https://tvax3.sinaimg.cn/large/008kBpBlgy1h37057ew9lj307409wq3m.jpg" />
-  </AwDrag>
-  <AwDrag
-    group-key="xsx"
-    :self-key="2"      
-  >
-    <img src="https://tvax3.sinaimg.cn/large/008kBpBlgy1h2sjo97niaj307409w74t.jpg" />
-  </AwDrag>
-</template>
-```
+<CodeShow :initExpand="true">
+  <template #meta>
+
+  ```vue:no-line-numbers
+  <template>
+    <!-- 注意 此组件会生成一个div标签 -->
+    <AwDrag
+      group-key="xsx"
+      :self-key="1"      
+    >
+      <img src="https://tvax3.sinaimg.cn/large/008kBpBlgy1h37057ew9lj307409wq3m.jpg" />
+    </AwDrag>
+    <AwDrag
+      group-key="xsx"
+      :self-key="2"      
+    >
+      <img src="https://tvax3.sinaimg.cn/large/008kBpBlgy1h2sjo97niaj307409w74t.jpg" />
+    </AwDrag>
+  </template>
+  ```
+  
+  </template>
+</CodeShow>
 
 ### 配合ListVueTransition组件实现拖拽过渡并换位
 
-```vue
-<template>
-  <AwListVueTransition class="content">
-    <AwDrag
-      v-for="item in list"
-      :key="item.id"
-      draggable
-      :self-key="item.id"
-      :group-key="123"
-      class="content-item"
-      @exChange="onExChange"
-    >
-      <img :src="item.pic" alt="" />
-    </AwDrag>
-  </AwListVueTransition>
-</template>
-
-<script lang="ts" setup>
-import { ref } from 'vue'
-
-import { AwDrag, AwListVueTransition, AwDragExchangeParam } from 'sorarain'
-import { arrChildSwap } from '@sorarain/utils'
-const list = ref([
-  {
-    id: 0,
-    pic: 'https://tvax3.sinaimg.cn/large/008kBpBlgy1h37057ew9lj307409wq3m.jpg'
-  },
-  {
-    id: 1,
-    pic: 'https://tvax3.sinaimg.cn/large/008kBpBlgy1h2sjo97niaj307409w74t.jpg'
-  },
-  {
-    id: 2,
-    pic: 'https://tvax3.sinaimg.cn/large/008kBpBlgy1gxh7fsvomqj307409waat.jpg'
-  }
-])
-const onExChange = (e: AwDragExchangeParam) => { // 触发交换
-  const fromI = list.value.findIndex((item) => item.id === e.from)
-  const toI = list.value.findIndex((item) => item.id === e.to)
-  arrChildSwap(list.value, fromI, toI)
-}
-</script>
-<style lang="less" scoped>
-.content {
-  display: flex;
-  gap: 20px;
-}
-.content-item {
-  position: relative;
-  display: flex;
-  img {
-    width: 150px;
-    height: 250px;
-    object-fit: cover;
-  }
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-</style>
-```
+<CodeShow>
+  <template #source>
+    <ClientOnly>
+      <drag-1 />
+    </ClientOnly>
+  </template>
+  <template #meta>
+  
+  @[code vue:no-line-numbers](../../\.vuepress/components/drag-1.vue)
+  
+  </template>
+</CodeShow>
 
 
 

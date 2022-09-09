@@ -17,40 +17,19 @@ import { AwVirtualWaterfall } from 'sorarain';
 
 ### 基础用法
 
-
-
-```vue
-<template>
-  <AwVirtualWaterfall
-    :column="5"
-    :request-size="50"
-    :requset="fetch"
-    :gap="26"
-  >
-    <!-- 内部已经做了循环处理，item相当于v-for的左侧内容 如 v-for="item in list" -->
-    <template #item="{ item }"> 
-        <div>{{ item.id }}</div>
-    </template>
-  </AwVirtualWaterfall>
-</template>
-```
-
-```typescript
-import { AwVirtualWaterfall, AwVirtualWaterfallRequset } from 'sorarain'
-
-const fetch: AwVirtualWaterfallRequset = async (tpage, size) => {
-  const { list, total } = await vilipixSearch({ // 接口参数看自己接口来定，关联 tpage当前页 size每页数量
-    limit: size,
-    offset: --tpage * size, 
-  })
-  return { // 根据类型约束，返回列表和接口返回的数据总数（非当前总数，指接口的实际数据总数）
-    list,
-    total
-  }
-}
-```
-
-
+<!-- virtual-waterfall-1 -->
+<CodeShow>
+  <template #source>
+    <ClientOnly>
+      <virtual-waterfall-1 />
+    </ClientOnly>
+  </template>
+  <template #meta>
+  
+  @[code vue{3-6,14,16-17,25-27,41,48,50-59}:no-line-numbers](../../\.vuepress/components/virtual-waterfall-1.vue)
+  
+  </template>
+</CodeShow>
 
 ## API
 
@@ -61,7 +40,7 @@ const fetch: AwVirtualWaterfallRequset = async (tpage, size) => {
 | 参数            | 说明               | 类型                                          | 默认值           |
 | --------------- | ------------------ | --------------------------------------------- | ---------------- |
 | target          | 滚动节点           | _string \| HTMLElement_                       | 此组件的根节点   |
-| requset         | 新数据请求         | _AwVirtualWaterfallRequset（详情于类型定义）_ | 基于类型的空函数 |
+| request         | 新数据请求         | _AwVirtualWaterfallRequest（详情于类型定义）_ | 基于类型的空函数 |
 | offsetY         | 滚底阈值差         | _number_                                      | 300              |
 | column          | 列的总数           | _number_                                      | 3                |
 | columnItemCount | 每列最小数量       | _number_                                      | 6                |
@@ -71,7 +50,7 @@ const fetch: AwVirtualWaterfallRequset = async (tpage, size) => {
 
 | 事件名         | 说明                      | 回调参数 |
 | -------------- | ------------------------- | -------- |
-| onNoMoreResult | requset结果数量超出时触发 |          |
+| onNoMoreResult | request结果数量超出时触发 |          |
 
 ### Slots
 
@@ -84,8 +63,8 @@ const fetch: AwVirtualWaterfallRequset = async (tpage, size) => {
 组件导出以下类型定义：
 
 ```typescript
-import { AwVirtualWaterfallRequset } from 'sorarain'
-// AwVirtualWaterfallRequset 指 props-requset的类型
+import { AwVirtualWaterfallRequest } from 'sorarain'
+// AwVirtualWaterfallRequest 指 props-request的类型
 ```
 
 
