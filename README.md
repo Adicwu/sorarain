@@ -75,6 +75,6 @@ Sorarain 目前仅在Chromium内核浏览器中完整使用
 <!-- - [更新日志](https://vant-contrib.gitee.io/vant#/zh-CN/changelog) -->
 <!-- - [Gitter 讨论组](https://gitter.im/vant-contrib/discuss?utm_source=share-link&utm_medium=link&utm_campaign=share-link) -->
 
-## 开源协议
+<!-- ## 开源协议 -->
 
-本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。
+<!-- 本项目基于 [MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89) 协议，请自由地享受和参与开源。 -->
