@@ -8,6 +8,6 @@
 
 此组件引入即可使用
 
-```js
+```typescript
 import { AwKeepAlives } from 'sorarain';
 ```

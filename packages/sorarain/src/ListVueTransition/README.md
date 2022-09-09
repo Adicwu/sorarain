@@ -8,7 +8,7 @@
 
 此组件引入即可使用
 
-```js
+```typescript
 import { AwListVueTransition } from 'sorarain';
 ```
 

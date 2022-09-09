@@ -10,7 +10,7 @@
 
 此组件引入即可使用
 
-```js
+```typescript
 import { AwDrag } from 'sorarain';
 ```
 
@@ -40,7 +40,7 @@ import { AwDrag } from 'sorarain';
 
 ### 配合ListVueTransition组件实现拖拽过渡并换位
 
-```typescript
+```vue
 <template>
   <AwListVueTransition class="content">
     <AwDrag
