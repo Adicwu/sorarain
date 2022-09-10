@@ -33,15 +33,24 @@ export default {
   ],
   '/zh/component': [
     {
-      text: '源生组件',
+      text: '节能组件',
       children: [
         {
           text: 'KeepAlives 多缓存',
           link: '/zh/component/keep-alives'
-        },
+        }
+      ]
+    },
+    {
+      text: '动画组件',
+      children: [
         {
           text: 'ListModifyTransition 列表CURD过渡',
           link: '/zh/component/list-modify-transition'
+        },
+        {
+          text: 'ListEnterTransition 列表进入过渡',
+          link: '/zh/component/list-enter-transition'
         }
       ]
     },
