@@ -1,10 +1,18 @@
 import { series, parallel } from 'gulp'
-import { removeDist, buildStyle, buildComponent } from './index'
+import { lessTranspile, componentTranspile, componentPath } from './index'
+
+const rimraf = require('rimraf')
 
 export default series(
-  async () => removeDist(),
+  // 同步执行删除
+  async (e) =>
+    new Promise((onFull) => rimraf(`${componentPath}/dist`, e, onFull)),
+  /**
+   * 并发执行打包
+   * lessTranspile与componentTranspile构建出来的结果目录是一致的，此时两个结果会合并
+   */
   parallel(
-    async () => buildStyle(),
-    async () => buildComponent()
+    async () => lessTranspile(),
+    async () => componentTranspile()
   )
 )

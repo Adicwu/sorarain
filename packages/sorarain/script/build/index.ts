@@ -1,24 +1,20 @@
-import { src, dest } from 'gulp'
-import { componentPath } from '../utils/paths'
-import less from 'gulp-less'
+import { dest, src } from 'gulp'
 import autoprefixer from 'gulp-autoprefixer'
+import less from 'gulp-less'
+import { componentPath } from '../utils/paths'
 import run from '../utils/run'
 
-//删除dist
-export const removeDist = () => {
-  return run(`rm -rf ${componentPath}/dist`, componentPath)
+export { componentPath } from '../utils/paths'
+
+export const lessTranspile = () => {
+  return src(`${componentPath}/src/**/style/**.less`) // 匹配项目指定目录结构下less文件
+    .pipe(less()) // less转css
+    .pipe(autoprefixer()) // css兼容前缀补充
+    .pipe(dest(`${componentPath}/dist/lib/src`)) // 放入lib包
+    .pipe(dest(`${componentPath}/dist/es/src`)) // 放入es包
 }
 
-//处理样式
-export const buildStyle = () => {
-  return src(`${componentPath}/src/**/style/**.less`)
-    .pipe(less())
-    .pipe(autoprefixer())
-    .pipe(dest(`${componentPath}/dist/lib/src`))
-    .pipe(dest(`${componentPath}/dist/es/src`))
-}
-
-//打包组件
-export const buildComponent = async () => {
-  run('pnpm run build', componentPath)
+export const componentTranspile = async () => {
+  // 终端执行vite打包指令
+  return run('pnpm run build', componentPath)
 }
