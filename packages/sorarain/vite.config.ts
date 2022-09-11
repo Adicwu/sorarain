@@ -10,7 +10,7 @@ export default defineConfig({
     //打包文件目录
     outDir: 'es',
     //压缩
-    minify: true,
+    // minify: true,
     rollupOptions: {
       //忽略打包文件
       external: ['vue', /\.less/, '@sorarain/use', '@sorarain/utils'],
@@ -19,16 +19,14 @@ export default defineConfig({
         {
           format: 'es',
           entryFileNames: '[name].js',
-          preserveModules: true,
           dir: resolve(__dirname, './dist/es'),
-          preserveModulesRoot: resolve(__dirname, 'src')
+          preserveModules: true
         },
         {
           format: 'cjs',
           entryFileNames: '[name].js',
-          preserveModules: true,
           dir: resolve(__dirname, './dist/lib'),
-          preserveModulesRoot: resolve(__dirname, 'src')
+          preserveModules: true
         }
       ]
     },
