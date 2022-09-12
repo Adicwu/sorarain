@@ -120,14 +120,17 @@ const columnsExtremeHeight = computed(() => {
 })
 /** 子项高宽集 */
 const awItem = computed(() =>
-  reList.data.reduce((totol, item) => {
-    const width = (scroll.width / props.column) | 0
-    totol.set(item.id, {
-      width,
-      height: ((width / item.w) * item.h) | 0
-    })
-    return totol
-  }, new Map<Type.DataItem['id'], Type.AwItemRect>())
+  reList.data.reduce<Map<Type.DataItem['id'], Type.AwItemRect>>(
+    (totol, item) => {
+      const width = (scroll.width / props.column) | 0
+      totol.set(item.id, {
+        width,
+        height: ((width / item.w) * item.h) | 0
+      })
+      return totol
+    },
+    new Map()
+  )
 )
 /** 实际请求页大小 */
 const requestSize = computed(
@@ -153,21 +156,22 @@ const contentStyle = computed<CSSProperties>(() => {
 })
 
 const { onIsBindChanged, getTarget } = (() => {
-  const mainScroll = eventThrottle(async (e: Event) => {
+  // todo 如何处理新增的内容放入后 仍然没有最高的列高的问题
+  const mainScroll = eventThrottle((e: Event) => {
     let { scrollTop, clientHeight } = e.target as HTMLElement
     scrollTop -= scroll.offsetTop
     scroll.start = scrollTop
-    if (
-      !hasMoreData.value &&
-      clientHeight + scrollTop > columnsExtremeHeight.value.max * 0.7
-    ) {
-      await loadMoreData()
+    if (!reList.isPending && !hasMoreData.value) {
+      loadMoreData().then(() => {
+        addToQueue()
+      })
+      return
     }
     if (
       clientHeight + scrollTop + props.offsetY >
       columnsExtremeHeight.value.min
     ) {
-      addToQueue((props.column / 2) | 0)
+      addToQueue()
     }
   })
   const getTarget = (): HTMLElement | null => {
@@ -199,7 +203,6 @@ const { onIsBindChanged, getTarget } = (() => {
 })()
 
 const loadMoreData = async () => {
-  if (reList.isPending) return
   reList.isPending = true
   const { list, total } = await props.request(reList.tpage, requestSize.value)
   const hasResult = list.length !== 0
@@ -243,7 +246,7 @@ const generateQueueListItem = (
   if (before) {
     y = before.h + before.y
   }
-  return {
+  return markRaw({
     item,
     h: hei,
     y,
@@ -252,7 +255,7 @@ const generateQueueListItem = (
       height: `${hei}px`,
       transform: `translate3d(${index * 100}%,${y}px,0)`
     }
-  }
+  })
 }
 /**
  * 将数据放入渲染队列
@@ -271,7 +274,7 @@ const pushToQueue = (index: number, item: Type.DataItem) => {
  * 取现有数据放入最矮的队列
  * @param size 执行次数，每次放一个数据
  */
-const addToQueue = (size = 1) => {
+const addToQueue = (size = (props.column / 2 + 0.5) | 0) => {
   for (const _ of Array(size)) {
     if (!hasMoreData.value) {
       break

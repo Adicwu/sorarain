@@ -19,10 +19,12 @@ export interface AwItemRect {
 
 /** 请求返回数据的具体项 */
 export type DataItem = {
+  [props: string]: any
+} & {
   w: number
   h: number
   id: number | string
-} & any
+}
 
 export interface ColumnsQueue {
   /** 当前列内item */
