@@ -10,6 +10,9 @@
     "moduleResolution": "Node",
     "lib": ["esnext", "dom"],
     "rootDirs": ["./", "./packages/sorarain"],
+    "types": [
+      "vitest/globals"
+    ],
     "paths": {
       "@/*": [
         "packages/sorarain/src/*"

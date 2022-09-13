@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "sorarain:build": "gulp -f packages/sorarain/script/build/gulpfile.ts",
+    "sorarain:test": "pnpm run --filter ./packages/sorarain test",
+    "sorarain:coverage": "pnpm run --filter ./packages/sorarain coverage",
     "sorarain/utils:build": "pnpm run --filter ./packages/utils build",
     "sorarain/use:build": "pnpm run --filter ./packages/use build",
     "examples:dev": "pnpm run --filter ./examples dev",
@@ -15,6 +17,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@testing-library/vue": "^6.6.1",
     "@types/gulp": "^4.0.9",
     "@types/gulp-autoprefixer": "^0.0.33",
     "@types/gulp-less": "^0.0.32",
@@ -22,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "@vitejs/plugin-vue": "^3.1.0",
+    "@vitest/coverage-c8": "^0.23.2",
     "@vue/compiler-sfc": "^3.2.37",
     "@vue/eslint-config-typescript": "^11.0.0",
     "eslint": "^8.23.0",
@@ -32,12 +36,14 @@
     "gulp-autoprefixer": "^8.0.0",
     "gulp-less": "^5.0.0",
     "gulp-rimraf": "^1.0.0",
+    "happy-dom": "^6.0.4",
     "less": "^4.1.3",
     "prettier": "^2.7.1",
     "sucrase": "^3.25.0",
     "typescript": "^4.7.4",
     "vite": "3.0.9",
     "vite-plugin-dts": "^1.4.1",
+    "vitest": "^0.23.2",
     "vue": "^3.2.36"
   }
 }
