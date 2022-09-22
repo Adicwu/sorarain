@@ -253,7 +253,7 @@ const generateQueueListItem = (
     style: {
       width: `${wid}px`,
       height: `${hei}px`,
-      transform: `translate3d(${index * 100}%,${y}px,0)`
+      transform: `translate(${index * 100}%,${y}px)`
     }
   })
 }
