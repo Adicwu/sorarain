@@ -1,0 +1,45 @@
+// Vitest Snapshot v1
+
+exports[`drag.ts > 正常执行 1`] = `
+"<div draggable=\\"true\\" ondragstart=\\"(e) =&gt; {
+      move.offsetX = e.offsetX;
+      move.offsetY = e.offsetY;
+      ondrag(e);
+      state.draging = true;
+      e.dataTransfer?.setData(
+        &quot;aw-drag&quot;,
+        JSON.stringify({
+          groupKey: props.groupKey,
+          selfKey: props.selfKey
+        })
+      );
+    }\\" ondragend=\\"() =&gt; {
+      state.draging = false;
+    }\\" ondrag=\\"(e) =&gt; {
+      move.x = e.clientX;
+      move.y = e.clientY;
+    }\\" ondragover=\\"(e) =&gt; {
+      e.preventDefault();
+      if (state.dragEntering)
+        return;
+      state.dragEntering = true;
+    }\\" ondrop=\\"(e) =&gt; {
+      e.preventDefault();
+      state.dragEntering = false;
+      const data = getDargTransferData(e);
+      if (data &amp;&amp; data.groupKey === props.groupKey &amp;&amp; props.selfKey !== data.selfKey) {
+        ctx.emit(&quot;exChange&quot;, {
+          from: props.selfKey,
+          to: data.selfKey
+        });
+      }
+    }\\" ondragleave=\\"() =&gt; {
+      state.dragEntering = false;
+    }\\" ondragenter=\\"(e) =&gt; {
+      state.isSameDrag = !!selfEl.value?.contains(e.target);
+    }\\" style=\\"opacity: 1;\\">
+  <!--teleport start--><img style=\\"width: 100px; height: 100px;\\" src=\\"https://tvax3.sinaimg.cn/large/008kBpBlgy1h37057ew9lj307409wq3m.jpg\\">
+  <!--teleport end-->
+  <!---->
+</div>"
+`;

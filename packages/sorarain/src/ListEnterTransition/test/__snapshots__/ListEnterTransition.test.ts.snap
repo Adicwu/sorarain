@@ -1,5 +1,13 @@
 // Vitest Snapshot v1
 
+exports[`ListEnterTransition.vue > 默认插槽运行正常 1`] = `
+"<transition-group-stub>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</transition-group-stub>"
+`;
+
 exports[`should render default slot correctly 1`] = `
 "<transition-group-stub>
   <div>1</div>
