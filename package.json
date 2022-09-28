@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "sorarain:build": "gulp -f packages/sorarain/script/build/gulpfile.ts",
-    "sorarain:test": "pnpm run --filter ./packages/sorarain test",
-    "sorarain:coverage": "pnpm run --filter ./packages/sorarain coverage",
-    "sorarain/utils:build": "pnpm run --filter ./packages/utils build",
-    "sorarain/use:build": "pnpm run --filter ./packages/use build",
-    "examples:dev": "pnpm run --filter ./examples dev",
-    "site:dev": "pnpm run --filter ./site docs:dev",
-    "site:build": "pnpm run --filter ./site docs:build"
+    "sorarain:test": "pnpm run --filter sorarain test",
+    "sorarain:coverage": "pnpm run --filter sorarain coverage",
+    "sorarain/utils:build": "pnpm run --filter @sorarain/utils build",
+    "sorarain/use:build": "pnpm run --filter @sorarain/use build",
+    "examples:dev": "pnpm run --filter examples dev",
+    "site:dev": "pnpm run --filter sorarain-site docs:dev",
+    "site:build": "pnpm run --filter sorarain-site docs:build"
   },
   "keywords": [],
   "author": "",

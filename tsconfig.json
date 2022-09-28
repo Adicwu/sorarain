@@ -3,13 +3,13 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "strict": true,
-    "target": "ES2015",
-    "module": "ESNext",
+    "target": "es6",
+    "module": "esnext",
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "lib": ["esnext", "dom"],
-    "rootDirs": ["./", "./packages/sorarain"],
+    "rootDirs": ["./"],
     "types": [
       "vitest/globals"
     ],
