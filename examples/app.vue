@@ -8,10 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  AwVirtualWaterfall,
-  AwVirtualWaterfallRequest
-} from '../packages/sorarain/src'
+import { AwVirtualWaterfall, AwVirtualWaterfallRequest } from 'sorarain'
 
 const req: AwVirtualWaterfallRequest = async (tpage, size) => {
   // 请求，并传入分页参数
