@@ -72,15 +72,15 @@ importers:
 
   packages/sorarain:
     specifiers:
-      '@sorarain/use': workspace:^1.1.51
-      '@sorarain/utils': workspace:^1.0.7
+      '@sorarain/use': workspace:*
+      '@sorarain/utils': workspace:*
     dependencies:
       '@sorarain/use': link:../use
       '@sorarain/utils': link:../utils
 
   packages/use:
     specifiers:
-      '@sorarain/utils': workspace:^1.0.7
+      '@sorarain/utils': workspace:*
     dependencies:
       '@sorarain/utils': link:../utils
 

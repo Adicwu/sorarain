@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@sorarain/utils": "workspace:^1.0.7",
-    "sorarain": "workspace:^0.5.65"
+    "@sorarain/utils": "workspace:*",
+    "sorarain": "workspace:*"
   }
 }

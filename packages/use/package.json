@@ -1,6 +1,6 @@
 {
   "name": "@sorarain/use",
-  "version": "1.1.51",
+  "version": "1.1.6",
   "description": "",
   "keywords": [],
   "main": "./dist/lib/index.js",
@@ -14,6 +14,6 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@sorarain/utils": "workspace:^1.0.7"
+    "@sorarain/utils": "workspace:*"
   }
 }

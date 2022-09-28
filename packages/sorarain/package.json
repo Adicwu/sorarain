@@ -1,6 +1,6 @@
 {
   "name": "sorarain",
-  "version": "0.5.66",
+  "version": "0.5.7",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.js",
   "homepage": "https://sorarain.adicw.cn/zh/",
@@ -23,7 +23,7 @@
   "license": "MIT",
   "typings": "./dist/es/index.d.ts",
   "dependencies": {
-    "@sorarain/use": "workspace:^1.1.51",
-    "@sorarain/utils": "workspace:^1.0.7"
+    "@sorarain/use": "workspace:*",
+    "@sorarain/utils": "workspace:*"
   }
 }
