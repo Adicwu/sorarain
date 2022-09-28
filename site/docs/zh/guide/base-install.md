@@ -13,13 +13,27 @@ Sorarain 部分组件具有严重且毁灭性的兼容性问题（以Chromium内
 
 ## 使用包管理器
 
-由于npm不支持workspace的导入（或者说我不知道怎么修改包），故推荐使用[Yarn](https://classic.yarnpkg.com/lang/en/)，然后您就可以使用打包工具，例如 [Vite](https://vitejs.dev/) 和 [webpack](https://webpack.js.org/)
+以下是主流包管理器的使用实例，然后您就可以使用打包工具，例如 [Vite](https://vitejs.dev/) 和 [Webpack](https://webpack.js.org/)
 
 <CodeGroup>
+  <CodeGroupItem title="NPM" active>
+
+```bash:no-line-numbers
+$ npm i sorarain
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="PNPM" active>
+
+```bash:no-line-numbers
+$ pnpm i sorarain
+```
+
+  </CodeGroupItem>
   <CodeGroupItem title="YARN" active>
 
 ```bash:no-line-numbers
-$ yarn add Sorarain
+$ yarn add sorarain
 ```
 
   </CodeGroupItem>

@@ -22,10 +22,24 @@ footer: MIT Licensed | Copyright © 2022-present AdicWu
 ### 相信你自己，你是最快的！
 
 <CodeGroup>
+  <CodeGroupItem title="NPM" active>
+
+```bash:no-line-numbers
+$ npm i sorarain
+```
+
+  </CodeGroupItem>
+  <CodeGroupItem title="PNPM" active>
+
+```bash:no-line-numbers
+$ pnpm i sorarain
+```
+
+  </CodeGroupItem>
   <CodeGroupItem title="YARN" active>
 
 ```bash:no-line-numbers
-$ yarn add Sorarain
+$ yarn add sorarain
 ```
 
   </CodeGroupItem>
