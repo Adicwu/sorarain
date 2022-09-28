@@ -1,6 +1,6 @@
 {
   "name": "sorarain",
-  "version": "0.5.65",
+  "version": "0.5.66",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.js",
   "homepage": "https://sorarain.adicw.cn/zh/",
