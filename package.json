@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sorarain:build": "gulp -f packages/sorarain/script/build/gulpfile.ts",
+    "sorarain:build": "pnpm run --filter sorarain build",
     "sorarain:test": "pnpm run --filter sorarain test",
     "sorarain:coverage": "pnpm run --filter sorarain coverage",
     "sorarain/utils:build": "pnpm run --filter @sorarain/utils build",

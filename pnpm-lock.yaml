@@ -64,8 +64,8 @@ importers:
 
   examples:
     specifiers:
-      '@sorarain/utils': workspace:^1.0.7
-      sorarain: workspace:^0.5.65
+      '@sorarain/utils': workspace:*
+      sorarain: workspace:*
     dependencies:
       '@sorarain/utils': link:../packages/utils
       sorarain: link:../packages/sorarain
@@ -89,11 +89,11 @@ importers:
 
   site:
     specifiers:
-      '@sorarain/utils': workspace:^1.0.7
+      '@sorarain/utils': workspace:*
       '@vuepress/plugin-git': 2.0.0-beta.51
       '@vuepress/plugin-register-components': 2.0.0-beta.51
       '@vuepress/plugin-search': 2.0.0-beta.51
-      sorarain: workspace:^0.5.4
+      sorarain: workspace:*
       vuepress: 2.0.0-beta.51
     dependencies:
       '@sorarain/utils': link:../packages/utils

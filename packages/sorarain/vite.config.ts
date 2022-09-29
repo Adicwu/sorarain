@@ -2,15 +2,11 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
-import lessSuffixReplace from './plugins/lessSuffixReplace'
+import vitePluginLesser from './plugins/vitePluginLesser'
 
 export default defineConfig({
   build: {
     target: 'modules',
-    //打包文件目录
-    outDir: 'es',
-    //压缩
-    // minify: true,
     rollupOptions: {
       //忽略打包文件
       external: ['vue', /\.less/, '@sorarain/use', '@sorarain/utils'],
@@ -45,7 +41,7 @@ export default defineConfig({
       ],
       tsConfigFilePath: '../../tsconfig.json'
     }),
-    lessSuffixReplace()
+    vitePluginLesser()
   ],
   resolve: {
     alias: {
