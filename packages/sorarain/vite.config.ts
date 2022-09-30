@@ -16,13 +16,15 @@ export default defineConfig({
           format: 'es',
           entryFileNames: '[name].js',
           dir: resolve(__dirname, './dist/es'),
-          preserveModules: true
+          preserveModules: true,
+          exports: 'named'
         },
         {
           format: 'cjs',
           entryFileNames: '[name].js',
           dir: resolve(__dirname, './dist/lib'),
-          preserveModules: true
+          preserveModules: true,
+          exports: 'named'
         }
       ]
     },

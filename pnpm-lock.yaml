@@ -22,7 +22,6 @@ importers:
       gulp: ^4.0.2
       gulp-autoprefixer: ^8.0.0
       gulp-less: ^5.0.0
-      gulp-rimraf: ^1.0.0
       happy-dom: ^6.0.4
       less: ^4.1.3
       prettier: ^2.7.1
@@ -51,7 +50,6 @@ importers:
       gulp: 4.0.2
       gulp-autoprefixer: 8.0.0_gulp@4.0.2
       gulp-less: 5.0.0
-      gulp-rimraf: 1.0.0
       happy-dom: 6.0.4
       less: 4.1.3
       prettier: 2.7.1
@@ -3232,13 +3230,6 @@ packages:
       - supports-color
     dev: true
 
-  /gulp-rimraf/1.0.0:
-    resolution: {integrity: sha512-RIHk+Ec5Sk0DFkgsAeSF6GUSlqikLMhXNHpUxCeNeIR7SG2j1f525cP7oLiHmgy9gzSeILRaC5i+79mQmTIy6A==}
-    dependencies:
-      rimraf: 2.7.1
-      through2: 3.0.2
-    dev: true
-
   /gulp/4.0.2:
     resolution: {integrity: sha512-dvEs27SCZt2ibF29xYgmnwwCYZxdxhQ/+LFWlbAW8y7jt68L/65402Lz3+CKy0Ov4rOs+NERmDq7YlZaDqUIfA==}
     engines: {node: '>= 0.10'}
@@ -4840,13 +4831,6 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  /rimraf/2.7.1:
-    resolution: {integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==}
-    hasBin: true
-    dependencies:
-      glob: 7.2.3
-    dev: true
-
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
@@ -5301,13 +5285,6 @@ packages:
     dependencies:
       readable-stream: 2.3.7
       xtend: 4.0.2
-    dev: true
-
-  /through2/3.0.2:
-    resolution: {integrity: sha512-enaDQ4MUyP2W6ZyT6EsMzqBPZaM/avg8iuo+l2d3QCs0J+6RaqkHV/2/lOwDTueBHeJ/2LG9lrLW3d5rWPucuQ==}
-    dependencies:
-      inherits: 2.0.4
-      readable-stream: 3.6.0
     dev: true
 
   /through2/4.0.2:
