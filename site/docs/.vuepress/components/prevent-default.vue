@@ -1,6 +1,6 @@
 <template>
   <div @click="outer">
-    <a href="#" @click="inner">click</button>
+    <a href="#" @click="inner">click</a>
   </div>
 </template>
 
