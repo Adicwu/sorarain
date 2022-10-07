@@ -1,3 +1,16 @@
-# @sorarain/use
+# Sorarain Use
 
-一些自定义hooks和direct
+Built-in composition APIs of Sorarain.
+
+## Install
+
+```shell
+# with npm
+npm i @sorarain/use
+
+# with yarn
+yarn add @sorarain/use
+
+# with pnpm
+pnpm add @sorarain/use
+```

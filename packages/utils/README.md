@@ -1,3 +1,16 @@
-# @sorarain/utils
+# Sorarain Use
 
-一些自定义工具函数
+Built-in helper Functions of Sorarain.
+
+## Install
+
+```shell
+# with npm
+npm i @sorarain/utils
+
+# with yarn
+yarn add @sorarain/utils
+
+# with pnpm
+pnpm add @sorarain/utils
+```
