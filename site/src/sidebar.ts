@@ -72,5 +72,74 @@ export default {
         }
       ]
     }
+  ],
+  '/zh/use': [
+    {
+      text: '组合式API',
+      children: [
+        {
+          text: 'useElementRect',
+          link: '/zh/use/use-element-rect'
+        },
+        {
+          text: 'useEventListener',
+          link: '/zh/use/use-event-listener'
+        },
+        {
+          text: 'usePage',
+          link: '/zh/use/use-page'
+        },
+        {
+          text: 'useRelation',
+          link: '/zh/use/use-relation'
+        },
+        {
+          text: 'useResizeListener',
+          link: '/zh/use/use-resize-listener'
+        },
+        {
+          text: 'useWindowSize',
+          link: '/zh/use/use-window-size'
+        }
+      ]
+    },
+    {
+      text: '辅助函数',
+      children: [
+        {
+          text: 'preventDefault',
+          link: '/zh/use/prevent-default'
+        },
+        {
+          text: 'mountComponent',
+          link: '/zh/use/mount-component'
+        },
+        {
+          text: 'elVisibleObserver',
+          link: '/zh/use/el-visible-observer'
+        }
+      ]
+    },
+    {
+      text: '自定义指令',
+      children: [
+        {
+          text: 'clickOutside',
+          link: '/zh/use/v-click-outside'
+        },
+        {
+          text: 'lazyBackgroudImg',
+          link: '/zh/use/v-lazy-backgroud-img'
+        },
+        {
+          text: 'lazyImgSrc',
+          link: '/zh/use/v-lazy-img-src'
+        },
+        {
+          text: 'moveable',
+          link: '/zh/use/v-moveable'
+        }
+      ]
+    }
   ]
 }

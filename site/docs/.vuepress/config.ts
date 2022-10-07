@@ -24,6 +24,14 @@ export default defineUserConfig({
       {
         text: '组件',
         link: '/zh/component/keep-alives'
+      },
+      {
+        text: 'Use',
+        link: '/zh/use/use-element-rect'
+      },
+      {
+        text: 'Utils',
+        link: '/zh/utils'
       }
     ],
     sidebar
@@ -52,19 +60,25 @@ export default defineUserConfig({
     searchPlugin({
       locales: {
         '/': {
-          placeholder: 'Search',
+          placeholder: 'Search'
         },
         '/zh/': {
-          placeholder: '搜索',
-        },
-      },
+          placeholder: '搜索'
+        }
+      }
     }),
     registerComponentsPlugin({
-      componentsDir: path.resolve(__dirname, './components'),
-      componentsPatterns: [
-        '**/*.vue',
-      ]
+      componentsDir: path.resolve(__dirname, './components')
     })
+    // registerComponentsPlugin({
+    //   componentsDir: path.resolve(__dirname, '../zh'),
+    //   // componentsPatterns: ['**/components/*.vue'],
+    //   getComponentName(filename) {
+    //     console.log('/n render', filename)
+
+    //     return path.trimExt(filename.replace(/\/|\\/g, '-'))
+    //   }
+    // })
   ],
   port: 2444
 })
