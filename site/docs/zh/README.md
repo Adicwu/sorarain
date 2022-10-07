@@ -44,3 +44,11 @@ $ yarn add sorarain
 
   </CodeGroupItem>
 </CodeGroup>
+
+
+
+### 已深度依赖此库的项目
+
+- 从零开始的动漫资源网站：[Masami](http://comic.adicw.cn/)
+- 练习时长两年半的博客：[Adicw](https://www.adicw.cn/)
+
